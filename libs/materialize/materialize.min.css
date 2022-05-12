@@ -8410,7 +8410,8 @@ input[type=range]::-ms-thumb {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-transform-origin: 0% 50%;
-    transform-origin: 0% 50%
+    transform-origin: 0% 50%;
+    -webkit-user-drag: none;
 }
 
 .carousel.carousel-slider {

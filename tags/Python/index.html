@@ -34,20 +34,10 @@
 </head>
 
 
+    
 
-   <style>
-    body{
-       background-image: url(/medias/bg-main.jpg);
-       background-repeat:no-repeat;
-       background-size:cover;
-       background-attachment:fixed;
-    }
-</style>
-
-
-
-<body>
-    <header class="navbar-fixed">
+                <body>
+                    <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -274,40 +264,37 @@
     </nav>
 
 </header>
-    <div class="bg-cover pd-header about-cover">
+                        <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
                 
-                    心灵语录
+                    「 道阻且长 行则将至 」
                         
             </div>
 
             <div class="description center-align" style="font-size: 18px !important;">
                 
-                    <span id="subtitle">所谓回忆者,虽说可以使人欢欣,有时也不免使人寂寞,使精神的丝缕还牵着已逝的寂寞的时光</span>
-                    <!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                    <script>
-                        var typed = new Typed("#subtitle", {
-                            strings: ['不满是向上的车轮', '所谓回忆者,虽说可以使人欢欣,有时也不免使人寂寞,使精神的丝缕还牵着已逝的寂寞的时光'],
-                            startDelay: 300,
-                            typeSpeed: 120,
-                            loop: true,
-                            backSpeed: 50,
-                            showCursor: false
-                    });
-                    </script> -->
-                    
+            </div>
+
+
+        </div>
+        <!-- <div class="hit-talk-box">
+            <div class="hit-talk-meta" @click.right.prevent="getHitTalk" @click.left="CopyText($event)"
+                title="左键复制，右键切换">
+                <span class="hit-talk-text">「 {{ hitText.hitokoto }} 」</span>
+                <span class="hit-talk-from">- {{ hitText.from }} -</span>
             </div>
         </div>
+        -->
     </div>
 </div>
 
 
     <script>
-        // 每天切换 banner 图.  Switch banner image every day.
+        // 每天切换 banner 图.
         var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpeg';
         $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
     </script>
@@ -471,7 +458,7 @@
 
 
 
-    <footer class="page-footer bg-footer-color">
+                            <footer class="page-footer bg-footer-color">
     
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
@@ -639,7 +626,7 @@
 
 <div class="progress-bar"></div>
 
-    <!-- 搜索遮罩框 -->
+                                <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -743,7 +730,7 @@ $(function () {
 });
 </script>
 
-    <!-- 回到顶部按钮 -->
+                                    <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fas fa-arrow-up"></i>
@@ -751,16 +738,22 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+                                        <script
+                                            src="/libs/materialize/materialize.min.js"></script>
+                                        <script
+                                            src="/libs/masonry/masonry.pkgd.min.js"></script>
+                                        <script
+                                            src="/libs/aos/aos.js"></script>
+                                        <script
+                                            src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                                        <script
+                                            src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                                        <script
+                                            src="/js/matery.js"></script>
 
-    <!-- Baidu Analytics -->
+                                        <!-- Baidu Analytics -->
 
-    <!-- Baidu Push -->
+                                            <!-- Baidu Push -->
 
 <script>
     (function () {
@@ -776,35 +769,47 @@ $(function () {
     })();
 </script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
+                                                
+                                                    <script
+                                                        src="/libs/others/clicklove.js"
+                                                        async="async"></script>
+                                                    
+                                                        
+                                                            <script async
+                                                                src="/libs/others/busuanzi.pure.mini.js"></script>
+                                                            
 
-    
+                                                                
 
-    
+                                                                        
 
-	
-    
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.9'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
+                                                                                
+                                                                                        
+                                                                                            <script
+                                                                                                type="text/javascript"
+                                                                                                color="0,0,255"
+                                                                                                pointColor="0,0,255"
+                                                                                                opacity='0.9'
+                                                                                                zIndex="-1"
+                                                                                                count="99"
+                                                                                                src="/libs/background/canvas-nest.js"></script>
+                                                                                            
 
-    
+                                                                                                
 
-    
-    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
-    
+                                                                                                            
+                                                                                                                <script
+                                                                                                                    type="text/javascript"
+                                                                                                                    src="/libs/background/ribbon-dynamic.js"
+                                                                                                                    async="async"></script>
+                                                                                                                
 
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
-    
+                                                                                                                    
+                                                                                                                        <script
+                                                                                                                            src="/libs/instantpage/instantpage.js"
+                                                                                                                            type="module"></script>
+                                                                                                                        
 
-</body>
+                </body>
 
 </html>

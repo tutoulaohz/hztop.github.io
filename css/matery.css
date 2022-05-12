@@ -581,9 +581,10 @@ header .go-back i {
 }
 
 .bg-cover .title {
-    font-size: 4rem;
+    font-size: 2.4rem;
     line-height: 1.2em;
     margin-bottom: 20px;
+    letter-spacing: 4.2px;
     position: relative;
 }
 
