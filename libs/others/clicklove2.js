@@ -29,7 +29,7 @@ window.onload = function () {
             var cleartimer = setTimeout(() => {
                 body.removeChild($w)
                 clearTimeout(cleartimer)
-            }, 1000)
+            }, 1000);
         })
     }
 }
