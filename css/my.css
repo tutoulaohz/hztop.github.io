@@ -82,18 +82,20 @@ body::-webkit-scrollbar-track {
   }
 
   
-  @media screen and (max-width: 760px) {
+  @media screen and (min-width: 993px) {
     .title {
-      font-size: 2.0rem;
-      line-height: 1.2em;
-      margin-bottom: 20px;
+      font-size: 2.4rem;
     }
   }
-
-  @media screen and (max-width: 460px) {
+  
+  @media screen and (min-width: 600px) and (max-width: 992px) {
     .title {
       font-size: 1.4rem;
-      line-height: 1.2em;
-      margin-bottom: 20px;
+    }
+  }
+  
+  @media only screen and (max-width: 601px) {
+    .title {
+      font-size: 1.0rem;
     }
   }

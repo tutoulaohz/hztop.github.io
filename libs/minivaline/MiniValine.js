@@ -1051,12 +1051,14 @@
     }, function (e, t, n) {
         "use strict";
         e.exports = {
+            //邮箱正则验证
             mail: function (e) {
                 return {
                     k: /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(e),
                     v: e
                 }
             },
+            //网址正则验证
             link: function (e) {
                 return 0 < e.length && (e = /^(http|https)/.test(e) ? e : "http://".concat(e)), {
                     k: !(0 < e.length) || /(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/.test(e),
