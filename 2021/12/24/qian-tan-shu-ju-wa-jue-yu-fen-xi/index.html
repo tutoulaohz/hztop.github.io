@@ -1317,7 +1317,26 @@ $(function () {
                                                                                                                 <script
                                                                                                                     type="text/javascript"
                                                                                                                     src="/libs/background/ribbon-dynamic.js"
-                                                                                                                    async="async"></script>
+                                                                                                                    async="async">
+                                                                                                                </script>
+                                                                                                                
+                                                                                                                // 彩色气泡效果
+                                                                                                                <script
+                                                                                                                    type="text/javascript"
+                                                                                                                    src="/libs/background/circleMagic.min.js"
+                                                                                                                    async="async">
+                                                                                                                </script>
+                                                                                                                <script>
+                                                                                                                    window.onload = function () {
+                                                                                                                        $('#homeBanner').circleMagic({
+                                                                                                                            elem: '#homeBanner',
+                                                                                                                            radius: 20,
+                                                                                                                            densety: 0.2,
+                                                                                                                            color: 'random',
+                                                                                                                            clearOffset: 0.3
+                                                                                                                        });
+                                                                                                                    }
+                                                                                                                </script>
                                                                                                                 
 
                                                                                                                     
@@ -1325,6 +1344,7 @@ $(function () {
                                                                                                                             src="/libs/instantpage/instantpage.js"
                                                                                                                             type="module"></script>
                                                                                                                         
+                                                                                                            
 
                 </body>
 
