@@ -1869,17 +1869,26 @@ footer .copy-right {
     padding-top: 15px;
     margin-bottom: 0;
     z-index: 998;
+    
 }
 
 .top-scroll .btn-floating {
-    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
-    width: 48px;
-    height: 48px;
+    border: 3.2px solid rgb(0, 77, 64);
+    background-color: #fff;
+    position: relative;
+    width: 50px;
+    height: 50px;
 }
 
 .top-scroll .btn-floating i {
-    line-height: 48px;
-    font-size: 1.8rem;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 19.5px;
+    left: 17.5px;
+    border-left: 3px solid #000;
+    border-bottom: 3px solid #000;
+    transform: rotateZ(135deg);
 }
 
 @media screen and (min-width: 368px) and (max-width: 767px) {
