@@ -81,6 +81,7 @@ body::-webkit-scrollbar-track {
     display: none;
   }
 
+
   
   @media screen and (min-width: 993px) {
     .title {
