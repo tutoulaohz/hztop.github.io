@@ -992,16 +992,21 @@
         list-style-type: circle;
     }
 
-    #vcomments table, th, td {
+    #vcomments table,
+    th,
+    td {
         padding: 12px 13px;
         border: 1px solid #dfe2e5;
     }
 
-    #vcomments table, th, td {
+    #vcomments table,
+    th,
+    td {
         border: 0;
     }
 
-    table tr:nth-child(2n), thead {
+    table tr:nth-child(2n),
+    thead {
         background-color: #fafafa;
     }
 
@@ -1104,7 +1109,8 @@
         color: #e8eaf6;
     }
 
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
         position: inherit;
         margin-left: -1.3rem;
         margin-right: 0.4rem;
@@ -1136,12 +1142,15 @@
         padding: .2em;
     }
 
-    #vcomments table, th, td {
+    #vcomments table,
+    th,
+    td {
         padding: 12px 13px;
         border: 1px solid #dfe2e5;
     }
 
-    table tr:nth-child(2n), thead {
+    table tr:nth-child(2n),
+    thead {
         background-color: #fafafa;
     }
 
@@ -1154,7 +1163,8 @@
         min-width: 80px;
     }
 
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
         position: inherit;
         margin-left: -1.3rem;
         margin-right: 0.4rem;
@@ -1163,11 +1173,11 @@
         left: unset;
         visibility: visible;
     }
-
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+    <div class="comment_headling"
+        style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span style="user-select: none;">评论</span>
     </div>
@@ -1177,8 +1187,9 @@
 
 <script src="/libs/valine/av-min.js"></script>
 <script src="/libs/valine/Valine.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
 <script>
-    
+
     new Valine({
         el: '#vcomments',
         appId: 'aoOWlkhpgjDoRY0eDUAKJR9j-gzGzoHsz',
@@ -1192,18 +1203,40 @@
 
     });
 
-    $('.vsubmit').click(function(){
-        for(let i=0;i<$('.vinput').length;i++){
-            $('.vinput')[i].value = '';
-        }
-    })
-
-    for(let i=0;i<$('.vinput').length;i++){
+    for (let i = 0; i < $('.vinput').length; i++) {
         $('.vinput')[i].value = '';
     }
 
-</script>
+    var err = document.createElement('div');
+    err.className = 'error-message';
+    err.innerHTML = '请填写正确的昵称和邮箱！';
+    $('.vwrap').append(err);
 
+    document.querySelector('.vsubmit').addEventListener('click', function (e) {
+        for (let i = 0; i < $('.vinput').length; i++) {
+            $('.vinput')[i].value = '';
+        }
+
+        const email = document.querySelector('input[type=email]');
+        const nick = document.querySelector('input[name=nick]');
+        const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+
+        if ($('.veditor')[0].value || !email.value || !nick.value || !reg.test(email.value)) {
+            document.querySelector('.error-message').style.transform = `translateY(${-100}%)`;
+            e.preventDefault();
+        }
+
+
+        setTimeout(function () {
+            document.querySelector('.error-message').style.transform = `translateY(${0}%)`;
+            $('.vmail').focus();
+        }, 3000);
+
+    });
+
+
+
+</script>
                                                             
 
                                                                 
