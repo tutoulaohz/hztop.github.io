@@ -2525,7 +2525,7 @@
             i._sharedConfig.keepErrorRawMessage = t
         }, i.setRequestTimeout = function (t) {
             i._config.requestTimeout = t
-        }, i.initialize = i.init;["applicationId", "applicationKey", "masterKey", "hookKey"].forEach(function (t) {
+        }, i.initialize = i.init, ["applicationId", "applicationKey", "masterKey", "hookKey"].forEach(function (t) {
             return Object.defineProperty(i, t, {
                 get: function () {
                     return i._config[t]
