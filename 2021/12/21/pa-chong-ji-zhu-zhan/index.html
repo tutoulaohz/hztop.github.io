@@ -1080,6 +1080,23 @@ browser<span class="token punctuation">.</span>execute_cdp_cmd<span class="token
     err.innerHTML = '请填写正确的昵称和邮箱！';
     $('.vwrap').append(err);
 
+    // if ($('.veditor')[0].value && document.querySelector('input[type=email]').value && document.querySelector('input[name=nick]').value) {
+    //     $('.vsubmit').disabled = false;
+    //     document.querySelector('.vsubmit').style.cursor = "pointer;";
+    // } else if (!$('.veditor')[0].value && document.querySelector('input[type=email]').value && document.querySelector('input[name=nick]').value) {
+    //     $('.vsubmit').disabled = true;
+    //     document.querySelector('.vsubmit').style.cursor = "not-allowed !important;";
+    // } else if ($('.veditor')[0].value && !document.querySelector('input[type=email]').value && document.querySelector('input[name=nick]').value) {
+    //     $('.vsubmit').disabled = true;
+    //     document.querySelector('.vsubmit').style.cursor = "not-allowed !important;";
+    // } else if ($('.veditor')[0].value && document.querySelector('input[type=email]').value && !document.querySelector('input[name=nick]').value) {
+    //     $('.vsubmit').disabled = true;
+    //     document.querySelector('.vsubmit').style.cursor = "not-allowed !important;";
+    // } else if (!$('.veditor')[0].value && !document.querySelector('input[type=email]').value && !document.querySelector('input[name=nick]').value) {
+    //     $('.vsubmit').disabled = true;
+    //     document.querySelector('.vsubmit').style.cursor = "not-allowed !important;";
+    // }
+
     document.querySelector('.vsubmit').addEventListener('click', function (e) {
         for (let i = 0; i < $('.vinput').length; i++) {
             $('.vinput')[i].value = '';
@@ -1097,7 +1114,6 @@ browser<span class="token punctuation">.</span>execute_cdp_cmd<span class="token
 
         setTimeout(function () {
             document.querySelector('.error-message').style.transform = `translateY(${0}%)`;
-            $('.vmail').focus();
         }, 3000);
 
     });
