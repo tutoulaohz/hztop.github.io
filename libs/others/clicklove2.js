@@ -1,4 +1,4 @@
-window.onload = function () {
+! function () {
     var a_idx = 0;
 
     function getRandomColor(max, min) {
@@ -32,4 +32,4 @@ window.onload = function () {
             }, 1000);
         })
     }
-}
+}(window, document);
