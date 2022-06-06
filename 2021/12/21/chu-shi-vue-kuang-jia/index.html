@@ -673,6 +673,7 @@ $router:一般进行编程式导航进行路由调整【push | replace】
         box-sizing: border-box;
         resize: none;
     }
+    
 
     #vcomments p {
         margin: 2px 2px 10px;
@@ -923,15 +924,17 @@ $router:一般进行编程式导航进行路由调整【push | replace】
 
     new Valine({
         el: '#vcomments',
+        admin_email:'qtophz@qq.com',
+        path: window.location.pathname,
+        comment_count: true,
         appId: 'aoOWlkhpgjDoRY0eDUAKJR9j-gzGzoHsz',
         appKey: '5GMp6YH2noEn5pAqRSkCv2RW',
         visitor: 'true' === 'true',
+        verify: 'true' === 'true',
         avatar: 'robohash',
         pageSize: '10',
         lang: 'zh-cn',
         placeholder: '发布第一条评论~',
-        recordIP: 'false',
-
     });
 
     for (let i = 0; i < $('.vinput').length; i++) {
