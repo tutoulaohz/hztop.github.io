@@ -19,12 +19,12 @@ body::-webkit-scrollbar-track {
 
 
 .hit-talk-box {
-    width: 60%;
+    width: auto;
     height: 80px;
-    position: absolute;
+    position: relative;
     left: 50%;
     bottom: 43%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);  
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     box-sizing: border-box;
@@ -36,17 +36,8 @@ body::-webkit-scrollbar-track {
     cursor: default;
     z-index: 99;
     color: #fff;
-    background: transparent;
+    background-color: rgba(0, 0, 0, 0.35);
     transition: all 0.2s linear;
-  }
-  
-  .hit-talk-box:hover {
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-  }
-  
-  .hit-talk-box:hover .hit-talk-from {
-    display: block;
   }
   
   .hit-talk-meta {
@@ -55,13 +46,14 @@ body::-webkit-scrollbar-track {
     font-size: 20px;
     display: grid;
     grid-template-areas: "hit-text" "hit-from";
-    background-color: rgba(0, 0, 0, 0.35);
     cursor: pointer;
     padding-left: 16px;
     padding-right: 16px;
   }
   
   .hit-talk-text {
+    width: auto;
+    height: auto;
     font-size: 1.2rem;
     grid-area: hit-text;
     text-align: center;
@@ -72,13 +64,14 @@ body::-webkit-scrollbar-track {
   }
   
   .hit-talk-from {
+    width: auto;
+    height: auto;
     color: #fff;
     font-size: 0.85rem;
     grid-area: hit-from;
     text-align: center;
     align-items: center;
     letter-spacing: 2px;
-    display: none;
   }
 
   .error-message {
@@ -99,16 +92,24 @@ body::-webkit-scrollbar-track {
     .title {
       font-size: 2.4rem;
     }
+
+    .hit-talk-text{
+      font-size: 1.3rem;
+    }
   }
   
   @media screen and (min-width: 600px) and (max-width: 992px) {
-    .title {
+    .title{
       font-size: 1.4rem;
+    }
+
+    .hit-talk-text{
+      font-size: 1.15rem;
     }
   }
   
   @media only screen and (max-width: 601px) {
-    .title {
+    .title,.hit-talk-text {
       font-size: 1.0rem;
     }
 

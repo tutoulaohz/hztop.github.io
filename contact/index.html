@@ -269,26 +269,124 @@
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
-            <div class="title center-align">
+            <!-- <div class="title center-align">
                 
                     「 道阻且长 行则将至 」
                         
-            </div>
+            </div> -->
 
             <div class="description center-align" style="font-size: 18px !important;">
                 
             </div>
 
+            <div class="hit-talk-box" id="hitTalk">
+                    <div class="hit-talk-meta" @click.right.prevent="getHitTalk" @click.left="CopyText($event)"
+                    title="左键复制，右键切换">
+                        <span class="hit-talk-text"> {{ hitText.hitokoto }} </span>
+                        <span class="hit-talk-from">- {{ hitText.from }} -</span>
+                    </div>
+            </div>
+
+            <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+            <script src="/libs/others/clipboard.min.js"></script>
+            <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.24.0/axios.js"></script>
+            <script>
+                var app = new Vue({
+                    el:'#hitTalk',
+                    data(){
+                        return{
+                            hitText:{},
+                        }
+                    },
+                    methods: {
+                        async getHitTalk() {
+                            return new Promise((resolve, reject) => {
+                            axios.get('https://v1.hitokoto.cn/?c=d&c=i&encode=json&lang=cn')
+                            .then(
+                                (response) => {
+                                resolve(response.data);
+                                },
+                                (error) => {
+                                reject(error);
+                                }
+                            );
+                        })
+                            .then((data) => {
+                            this.hitText = data;
+                            })
+                            .catch((err) => {
+                            console.log(err.message);
+                            });
+                        },
+
+                        CopyText(e) {
+                            const clipboard = new ClipboardJS(e.target, {
+                                text: () => $(".hit-talk-meta").text(),
+                            });
+
+                            clipboard.on("success", () => {
+                                this.ShowTip();
+                                clipboard.off("error");
+                                clipboard.off("success");
+                                clipboard.destroy();
+                            });
+
+                            clipboard.on("error", () => {
+                                clipboard.off("error");
+                                clipboard.off("success");
+                                clipboard.destroy();
+                            });
+                            clipboard.onClick(e);
+                            },
+
+                        //复制成功的提示文本
+                        ShowTip() {
+                            let $d = document.createElement("div");
+                            let $i = document.createElement("i");
+                            let $s = document.createElement("span");
+
+                            $d.style.width = 180 + "px";
+                            $d.style.height = 42 + "px";
+                            $d.style.backgroundColor = "rgb(22, 22, 22)";
+                            $d.style.textAlign = "center";
+                            $d.style.lineHeight = 42 + "px";
+                            $d.style.color = "rgb(103, 194, 58)";
+                            $d.style.fontSize = 14 + "px";
+                            $d.style.borderRadius = 8 + "px";
+                            $d.style.position = "absolute";
+                            $d.style.top = 32 + "px";
+                            $d.style.left = 50 + "%";
+                            $d.style.transform = `translateX(${-50}%)`;
+                            $d.style.transition = "all 1s linear";
+                            $d.style.zIndex = 99999;
+
+                            $i.style.marginRight = 4 + "px";
+                            $s.innerHTML = "✔ 已复制到剪贴板";
+
+                            $d.appendChild($i);
+                            $d.appendChild($s);
+
+                            document.body.appendChild($d);
+                            var timer = setTimeout(() => {
+                                $d.style.top = $d.offsetTop - 84 + "px";
+                                clearTimeout(timer);
+                                var timer2 = setTimeout(() => {
+                                document.body.removeChild($d);
+                                clearTimeout(timer2);
+                                }, 1000);
+                            }, 2000);
+                        },
+                    },
+                    beforeMount() {
+                        //挂载之前发起请求
+                        this.getHitTalk();
+                    },
+                })
+            </script>
 
         </div>
-        <!-- <div class="hit-talk-box">
-            <div class="hit-talk-meta" @click.right.prevent="getHitTalk" @click.left="CopyText($event)"
-                title="左键复制，右键切换">
-                <span class="hit-talk-text">「 {{ hitText.hitokoto }} 」</span>
-                <span class="hit-talk-from">- {{ hitText.from }} -</span>
-            </div>
-        </div>
-        -->
+       
+       
     </div>
 </div>
 
