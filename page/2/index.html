@@ -326,7 +326,7 @@
                             });
 
                             clipboard.on("success", () => {
-                                this.ShowTip();
+                                this.ShowTip();                      
                                 clipboard.off("error");
                                 clipboard.off("success");
                                 clipboard.destroy();
@@ -338,7 +338,7 @@
                                 clipboard.destroy();
                             });
                             clipboard.onClick(e);
-                            },
+                        },
 
                         //复制成功的提示文本
                         ShowTip() {

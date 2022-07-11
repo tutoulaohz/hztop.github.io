@@ -263,7 +263,8 @@ mark {
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: linear-gradient(to right,rgb(134, 239, 172),rgb(59, 130, 246),rgb(147, 51, 234)) !important;
+    /* background: linear-gradient(to right,rgb(255,255,255),rgb(42,175,209),rgb(123,38,33)) !important; */
+    background-color: #de1c31;
     opacity: 0.8;
 }
 
