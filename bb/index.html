@@ -321,6 +321,7 @@
                             console.log(err.message);
                             });
                         },
+                        
 
                         CopyText(e) {
                             const clipboard = new ClipboardJS(e.target, {
@@ -406,8 +407,8 @@
     
 
     <main class="post-container content">
-        <div id="artDetail">
-    <div class="card">
+        <div id="artDetail" class="bb-card">
+    <div class="card ">
         <div class="card-content article-info">
             <div class="row tag-cate">
                 <div class="col s7">
@@ -486,6 +487,8 @@
                     </main>
                 
             </div>
+
+            
             <hr/>
 
         </div>
@@ -823,8 +826,6 @@
         }, 3000);
 
     });
-
-
 
 </script>
     

@@ -118,4 +118,9 @@ body::-webkit-scrollbar-track {
     .error-message{
       line-height: 409.25px !important;
     }
+
+    .bb-card{
+      margin: 0 auto;
+      width: 90%;
+    }
   }

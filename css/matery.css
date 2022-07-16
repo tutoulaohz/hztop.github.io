@@ -231,6 +231,11 @@ mark {
     box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07) !important;
 }
 
+.bb-card{
+    width: 80%;
+    margin: 0 auto;
+}
+
 .card .card-image img {
     border-radius: 8px 8px 0 0;
     /* 修改文章列表图片填充样式为 cover 以覆盖整个区域而不会被缩放 */
@@ -1896,7 +1901,6 @@ footer .copy-right {
     .info-break-policy {
         word-break: keep-all;
         float: left;
-        width: 50%;
     }
 }
 
